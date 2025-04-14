@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Menu, ChevronRight, LogOut } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
 const Header = ({ isHomePage = false }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -82,14 +83,14 @@ const Header = ({ isHomePage = false }) => {
           </div>
 
           <div className="relative group">
-            <a
-              href="/events"
+            <Link
+              to="/events"
               className={`${textColor} text-lg font-serif relative flex items-center`}
             >
               Events
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-emerald-600 transition-all duration-300 ease-in-out group-hover:w-full"></span>
               <ChevronRight className="ml-1 h-4 w-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-            </a>
+            </Link>
           </div>
 
           <div className="relative group">

@@ -4,6 +4,33 @@ import UpcomingEventBanner from "../components/UpcomingEventBanner";
 import { ArrowRight } from "lucide-react";
 
 const Publications = () => {
+  const caseStudies = [
+    {
+      title: "Market Analysis",
+      description:
+        "Arcadia conducts in-depth market analysis to provide businesses with a comprehensive understanding of the sustainability landscape. These analyses explore trends, opportunities, challenges, and key drivers in the transition to a circular economy",
+      image:
+        "https://plus.unsplash.com/premium_photo-1661310049066-57565d639aba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      link: "#",
+    },
+    {
+      title: "Position Papers",
+      description:
+        "Arcadia develops position papers that outline informed perspectives on critical sustainability issues. These papers offer a deep dive into industry challenges, policy recommendations, and strategic actions that stakeholders should adopt to drive systemic change",
+      image:
+        "https://plus.unsplash.com/premium_photo-1661573111481-da21c4137d0b?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      link: "#",
+    },
+    {
+      title: "Waste Reports / Manifestos",
+      description:
+        "Our waste reports provide detailed assessments of current waste management practices, with a focus on gaps, inefficiencies, and opportunities for improvement",
+      image:
+        "https://plus.unsplash.com/premium_photo-1661431121792-81fa2b971d0f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      link: "#",
+    },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col pt-16">
       <Header />
@@ -46,76 +73,34 @@ const Publications = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            {/* Case Study 1 */}
-            <div className="bg-gray-800 rounded-none overflow-hidden">
-              <div className="h-56 overflow-hidden">
-                <img
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Case Study 1"
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
+            {caseStudies.map((study, index) => (
+              <div
+                key={index}
+                className="bg-gray-800 rounded-none overflow-hidden"
+              >
+                <div className="h-56 overflow-hidden">
+                  <img
+                    src={study.image}
+                    alt={`Case Study ${index + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-serif font-bold mb-4">
+                    {study.title}
+                  </h3>
+                  <p className="text-gray-600 mb-8 text-lg">
+                    {study.description}
+                  </p>
+                  <a
+                    href={study.link}
+                    className="inline-flex items-center text-emerald-400 hover:text-emerald-300"
+                  >
+                    Read more <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </div>
               </div>
-              <div className="p-6">
-                <div className="text-sm text-gray-400 mb-2">Case Study</div>
-                <h3 className="text-xl font-serif font-bold mb-4">
-                  Rewiring the insurance claims journey with sustainable
-                  practices
-                </h3>
-                <a
-                  href="#"
-                  className="inline-flex items-center text-emerald-400 hover:text-emerald-300"
-                >
-                  Read more <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </div>
-            </div>
-
-            {/* Case Study 2 */}
-            <div className="bg-gray-800 rounded-none overflow-hidden">
-              <div className="h-56 overflow-hidden">
-                <img
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Case Study 2"
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
-              </div>
-              <div className="p-6">
-                <div className="text-sm text-gray-400 mb-2">Case Study</div>
-                <h3 className="text-xl font-serif font-bold mb-4">
-                  Rewiring the way companies work with circular economy
-                </h3>
-                <a
-                  href="#"
-                  className="inline-flex items-center text-emerald-400 hover:text-emerald-300"
-                >
-                  Read more <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </div>
-            </div>
-
-            {/* Case Study 3 */}
-            <div className="bg-gray-800 rounded-none overflow-hidden">
-              <div className="h-56 overflow-hidden">
-                <img
-                  src="/placeholder.svg?height=400&width=600"
-                  alt="Case Study 3"
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
-              </div>
-              <div className="p-6">
-                <div className="text-sm text-gray-400 mb-2">Case Study</div>
-                <h3 className="text-xl font-serif font-bold mb-4">
-                  How a UAE bank transformed to lead with sustainability and
-                  advanced analytics
-                </h3>
-                <a
-                  href="#"
-                  className="inline-flex items-center text-emerald-400 hover:text-emerald-300"
-                >
-                  Read more <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="flex justify-center mt-16">
