@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Events from "./pages/Events";
 import Publications from "./pages/Publications";
 import WhoWeAre from "./pages/WhoWeAre";
+import EventCarousel from "./components/EventCarousel";
 import ContactUs from "./pages/ContactUs";
 import Dashboard from "./pages/Dashboard";
 import { AuthProvider } from "./context/AuthContext";
@@ -24,7 +25,7 @@ function App() {
               <main className="min-h-screen">
                 <HeroSection />
                 <KeyComponentsSection />
-                <FeaturedEventsSection />
+                <EventCarousel />
                 <Footer />
               </main>
             }

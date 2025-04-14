@@ -4,7 +4,7 @@ const HackathonsSection = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row-reverse items-center gap-10">
           <div className="md:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-green-600 mb-6">
+            <h2 className="text-5xl md:text-5dxl font-serif font-bold mb-6">
               HACKATHONS AND CAMPAIGNS
             </h2>
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">

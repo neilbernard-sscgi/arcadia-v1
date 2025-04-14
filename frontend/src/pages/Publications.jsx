@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import UpcomingEventBanner from "../components/UpcomingEventBanner";
+import FeaturedEventsSection from "../components/FeaturedEventsSection";
 import { ArrowRight } from "lucide-react";
 
 const Publications = () => {
@@ -56,7 +56,7 @@ const Publications = () => {
           </p>
         </div>
       </section>
-
+      <FeaturedEventsSection />
       {/* Publications Section */}
       <section className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-6">
@@ -114,9 +114,6 @@ const Publications = () => {
           </div>
         </div>
       </section>
-
-      {/* Upcoming Event Banner */}
-      <UpcomingEventBanner />
 
       <Footer />
     </div>

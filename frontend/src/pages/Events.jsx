@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import EventCarousel from "../components/EventCarousel";
+import UpcomingEventBanner from "../components/UpcomingEventBanner";
 import DeepDiveSection from "../components/DeepDiveSection";
 import HackathonsSection from "../components/HackathonsSection";
 import { ArrowRight } from "lucide-react";
@@ -93,20 +93,17 @@ const Events = () => {
         </div>
       </section>
 
-      {/* Event Carousel Section */}
-      <EventCarousel />
-
       {/* Deep Dive Dialogues Section */}
       <DeepDiveSection />
 
       {/* Hackathons Section */}
       <HackathonsSection />
-
+      <UpcomingEventBanner />
       {/* Events List Section */}
       <section className="py-20 bg-white flex-grow">
         <div className="container mx-auto">
           <h2 className="text-5xl md:text-5xl font-serif font-bold text-center mb-16">
-            Upcoming Events
+            Previous Events
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

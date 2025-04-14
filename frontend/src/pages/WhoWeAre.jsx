@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ContactForm from "../components/ContactForm";
 import PartnersSection from "../components/PartnersSection";
-
+import EventCarousel from "../components/EventCarousel";
 const WhoWeAre = () => {
   return (
     <div className="min-h-screen flex flex-col pt-16">
@@ -66,6 +66,7 @@ const WhoWeAre = () => {
         </div>
       </section>
       {/* Team Section */}
+      {/* Event Carousel Section */}
 
       {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-6">

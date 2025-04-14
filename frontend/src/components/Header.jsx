@@ -60,24 +60,24 @@ const Header = ({ isHomePage = false }) => {
             </button>
             <div className="absolute left-0 mt-2 w-64 bg-white rounded-none shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
               <div className="py-1">
-                <a
-                  href="/mission-and-vision"
+                <Link
+                  to="/mission-and-vision"
                   className="block px-4 py-2 text-gray-800 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200"
                 >
                   Mission & Vision
-                </a>
-                <a
-                  href="/contact-us"
+                </Link>
+                <Link
+                  to="/contact-us"
                   className="block px-4 py-2 text-gray-800 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200"
                 >
                   Contact Us
-                </a>
-                <a
-                  href="/partners"
+                </Link>
+                <Link
+                  to="/partners"
                   className="block px-4 py-2 text-gray-800 hover:bg-emerald-50 hover:text-emerald-600 transition-colors duration-200"
                 >
                   Partners
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -94,26 +94,26 @@ const Header = ({ isHomePage = false }) => {
           </div>
 
           <div className="relative group">
-            <a
-              href="/publications"
+            <Link
+              to="/publications"
               className={`${textColor} text-lg font-serif relative flex items-center`}
             >
-              Publications
+              Publication
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-emerald-600 transition-all duration-300 ease-in-out group-hover:w-full"></span>
               <ChevronRight className="ml-1 h-4 w-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-            </a>
+            </Link>
           </div>
 
           {isAuthenticated ? (
             <div className="relative group">
-              <a
-                href="/dashboard"
+              <Link
+                to="/dashboard"
                 className={`${textColor} text-lg font-serif relative flex items-center`}
               >
                 Dashboard
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-emerald-600 transition-all duration-300 ease-in-out group-hover:w-full"></span>
                 <ChevronRight className="ml-1 h-4 w-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-              </a>
+              </Link>
               <div className="absolute right-0 mt-2 w-48 bg-white rounded-none shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
                 <div className="py-1">
                   <button
@@ -178,26 +178,27 @@ const Header = ({ isHomePage = false }) => {
                 </a>
               </div>
             </div>
-            <a
-              href="/events"
+            <Link
+              to="/events"
               className="py-3 px-6 border-b border-gray-200 font-serif text-lg"
             >
               Events
-            </a>
-            <a
-              href="/publications"
+            </Link>
+            <Link
+              to="/publications"
               className="py-3 px-6 border-b border-gray-200 font-serif text-lg"
             >
               Publications
-            </a>
+            </Link>
+
             {isAuthenticated ? (
               <>
-                <a
-                  href="/dashboard"
+                <Link
+                  to="/dashboard"
                   className="py-3 px-6 border-b border-gray-200 font-serif text-lg"
                 >
                   Dashboard
-                </a>
+                </Link>
                 <button
                   onClick={handleLogout}
                   className="py-3 px-6 text-left text-red-600 font-serif text-lg flex items-center"
@@ -207,10 +208,10 @@ const Header = ({ isHomePage = false }) => {
                 </button>
               </>
             ) : (
-              <a href="/login" className="py-3 px-6 font-serif text-lg">
+              <Link to="/login" className="py-3 px-6 font-serif text-lg">
                 Log In{" "}
                 <span className="text-sm text-gray-500">(Admin Only)</span>
-              </a>
+              </Link>
             )}
           </div>
         </div>
