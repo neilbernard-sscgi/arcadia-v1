@@ -130,13 +130,13 @@ const Header = ({ isHomePage = false }) => {
             </div>
           ) : (
             <div className="relative group">
-              <a
-                href="/login"
-                className={`${textColor} text-lg font-serif relative flex items-center`}
+              <Link
+                to="/login"
+                className={`${textColor} text-lg font-serif relative flex items-center group`}
               >
                 Log In
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-emerald-600 transition-all duration-300 ease-in-out group-hover:w-full"></span>
-              </a>
+              </Link>
               <div className="absolute right-0 mt-2 w-48 bg-white rounded-none shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
                 <div className="py-1">
                   <span className="block px-4 py-2 text-gray-600 text-sm">
