@@ -21,11 +21,25 @@ h6 {
 }
 
 p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 768px) {
   body {
     font-size: 20px;
   }
+}
+@keyframes modalScale {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-animation {
+  animation: modalScale 0.2s ease-out forwards;
 }

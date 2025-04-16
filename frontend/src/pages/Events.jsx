@@ -100,7 +100,7 @@ const Events = () => {
       <HackathonsSection />
       <UpcomingEventBanner />
       {/* Events List Section */}
-      <section className="py-20 bg-white flex-grow">
+      <section className="py-20 flex-grow bg-gray-900 text-white">
         <div className="container mx-auto">
           <h2 className="text-5xl md:text-5xl font-serif font-bold text-center mb-16">
             Previous Events
@@ -127,8 +127,8 @@ const Events = () => {
                     <h3 className="text-2xl font-serif font-bold mb-2">
                       {event.title}
                     </h3>
-                    <p className="text-gray-500 mb-2">{event.subtitle}</p>
-                    <p className="text-gray-700 mb-3">{limitedDescription}</p>
+                    <p className="text-gray-100 mb-2">{event.subtitle}</p>
+                    <p className="text-gray-400 mb-3">{limitedDescription}</p>
                     <a
                       href={event.link}
                       className="inline-flex items-center text-emerald-600 font-medium hover:text-emerald-700"

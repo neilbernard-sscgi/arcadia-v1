@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -11,7 +11,6 @@ import DashboardEvents from "../components/DashboardEvents";
 const Dashboard = () => {
   const { user, logout, isAuthenticated } = useAuth();
   const navigate = useNavigate();
-  const [activeSection, setActiveSection] = useState("profile");
 
   useEffect(() => {
     if (!isAuthenticated) {
@@ -32,11 +31,11 @@ const Dashboard = () => {
     <div className="min-h-screen flex flex-col pt-16">
       <Header />
 
-      <div className="flex-grow py-12 bg-gray-50 flex items-center justify-center">
-        <div className="container max-w-full px-7">
-          <div className="flex flex-col md:flex-row gap-4">
+      <div className="flex-grow py-12 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row gap-8">
             {/* Sidebar */}
-            <div className="w-full md:w-1/5">
+            <div className="w-full md:w-1/4">
               <div className="bg-white shadow-md p-6">
                 <div className="flex items-center space-x-4 mb-8">
                   <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center">
@@ -51,54 +50,34 @@ const Dashboard = () => {
                 </div>
 
                 <nav className="space-y-2">
-                  <button
-                    onClick={() => setActiveSection("profile")}
-                    className={`flex items-center space-x-2 p-3 ${
-                      activeSection === "profile"
-                        ? "bg-emerald-50 text-emerald-700"
-                        : "text-gray-700 hover:bg-gray-50"
-                    } rounded-md w-full text-left`}
+                  <a
+                    href="#"
+                    className="flex items-center space-x-2 p-3 bg-emerald-50 text-emerald-700 rounded-md"
                   >
                     <User className="h-5 w-5" />
                     <span>Profile</span>
-                  </button>
-
-                  <button
-                    onClick={() => setActiveSection("events")}
-                    className={`flex items-center space-x-2 p-3 ${
-                      activeSection === "events"
-                        ? "bg-emerald-50 text-emerald-700"
-                        : "text-gray-700 hover:bg-gray-50"
-                    } rounded-md w-full text-left`}
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center space-x-2 p-3 text-gray-700 hover:bg-gray-50 rounded-md"
                   >
                     <Calendar className="h-5 w-5" />
                     <span>Events</span>
-                  </button>
-
-                  <button
-                    onClick={() => setActiveSection("publications")}
-                    className={`flex items-center space-x-2 p-3 ${
-                      activeSection === "publications"
-                        ? "bg-emerald-50 text-emerald-700"
-                        : "text-gray-700 hover:bg-gray-50"
-                    } rounded-md w-full text-left`}
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center space-x-2 p-3 text-gray-700 hover:bg-gray-50 rounded-md"
                   >
                     <FileText className="h-5 w-5" />
                     <span>Publications</span>
-                  </button>
-
-                  <button
-                    onClick={() => setActiveSection("settings")}
-                    className={`flex items-center space-x-2 p-3 ${
-                      activeSection === "settings"
-                        ? "bg-emerald-50 text-emerald-700"
-                        : "text-gray-700 hover:bg-gray-50"
-                    } rounded-md w-full text-left`}
+                  </a>
+                  <a
+                    href="#"
+                    className="flex items-center space-x-2 p-3 text-gray-700 hover:bg-gray-50 rounded-md"
                   >
                     <Settings className="h-5 w-5" />
                     <span>Settings</span>
-                  </button>
-
+                  </a>
                   <button
                     onClick={handleLogout}
                     className="flex items-center space-x-2 p-3 text-red-600 hover:bg-red-50 rounded-md w-full text-left"
@@ -111,9 +90,9 @@ const Dashboard = () => {
             </div>
 
             {/* Main Content */}
-            <div className="w-full md:w-4/5">
+            <div className="w-full md:w-3/4">
               <div className="bg-white shadow-md p-8">
-                <h2 className="text-3xl font-serif font-bold mb-6">
+                <h2 className="text-2xl font-serif font-bold mb-6">
                   Welcome to your Dashboard
                 </h2>
 
@@ -186,6 +165,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      <DashboardEvents />
       <Footer />
     </div>
   );

@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 pt-10 pb-3">
+    <footer className="bg-gray-800 pt-10 pb-3 text-white">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Column 1 */}
@@ -131,7 +131,7 @@ const Footer = () => {
         <div className="pt-5 border-t border-gray-200 flex justify-center items-center">
           <div className="text-center">
             <img
-              src="/logo4.png"
+              src="/logo3.png"
               alt="Arcadia Logo"
               className="h-10 mx-auto mb-2"
             />
