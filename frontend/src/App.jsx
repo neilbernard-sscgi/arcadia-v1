@@ -9,7 +9,7 @@ import Publications from "./pages/Publications";
 import WhoWeAre from "./pages/WhoWeAre";
 import EventCarousel from "./components/EventCarousel";
 import ContactUs from "./pages/ContactUs";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/Dashboard1";
 import { AuthProvider } from "./context/AuthContext";
 import "./index.css";
 import Partners from "./pages/Partners";

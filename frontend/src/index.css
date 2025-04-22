@@ -29,6 +29,10 @@ p {
     font-size: 20px;
   }
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @keyframes modalScale {
   from {
     transform: scale(0.9);
@@ -42,4 +46,34 @@ p {
 
 .modal-animation {
   animation: modalScale 0.2s ease-out forwards;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal-overlay {
+  @apply fixed inset-0 bg-black/50 flex items-center justify-center p-4 backdrop-blur-sm;
+  z-index: 50;
+}
+
+.modal-content {
+  @apply max-h-[90vh] overflow-y-auto;
+  z-index: 51;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400;
+}
+
+.modal-delete {
+  @apply max-h-fit overflow-visible;
 }

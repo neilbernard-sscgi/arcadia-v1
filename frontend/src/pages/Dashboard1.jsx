@@ -7,8 +7,6 @@ import Footer from "../components/Footer";
 import { useAuth } from "../context/AuthContext";
 import { LogOut, User, Calendar, FileText, Settings } from "lucide-react";
 import DashboardEvents from "../components/DashboardEvents";
-import DashboardPublications from "../components/DashboardPublications";
-import DashboardSettings from "../components/DashboardSettings";
 
 const Dashboard = () => {
   const { user, logout, isAuthenticated } = useAuth();
@@ -35,9 +33,9 @@ const Dashboard = () => {
       case "events":
         return <DashboardEvents />;
       case "publications":
-        return <DashboardPublications />;
+        return <DashboardEvents />;
       case "settings":
-        return <DashboardSettings />;
+        return <DashboardEvents />;
       default:
         return (
           <div className="bg-white shadow-md p-8">

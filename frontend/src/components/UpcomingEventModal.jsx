@@ -1,14 +1,30 @@
-import React, { useState, useRef } from 'react';
-import { X, Upload } from 'lucide-react';
+import React, { useState, useRef, useEffect } from "react";
+import { X, Upload } from "lucide-react";
 
-export default function UpcomingEventModal({ event, isOpen, onClose, onSuccess }) {
+export default function UpcomingEventModal({
+  event,
+  isOpen,
+  onClose,
+  onSuccess,
+}) {
   const [formData, setFormData] = useState({
     id: event?.id || Date.now(),
-    title: event?.title || '',
-    image: event?.image || ''
+    title: event?.title || "",
+    image: event?.image || "",
   });
   const [previewImage, setPreviewImage] = useState(event?.image || null);
   const fileInputRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+    return () => {
+      document.body.classList.remove("modal-open");
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -23,16 +39,16 @@ export default function UpcomingEventModal({ event, isOpen, onClose, onSuccess }
     if (file) {
       const objectUrl = URL.createObjectURL(file);
       setPreviewImage(objectUrl);
-      setFormData(prev => ({ ...prev, image: objectUrl }));
+      setFormData((prev) => ({ ...prev, image: objectUrl }));
     }
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg p-6 max-w-md w-full">
+    <div className="modal-overlay">
+      <div className="bg-white rounded-lg p-6 max-w-md w-full modal-animation modal-content">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold">
-            {event ? 'Edit Upcoming Event' : 'Create New Upcoming Event'}
+            {event ? "Edit Upcoming Event" : "Create New Upcoming Event"}
           </h2>
           <button onClick={onClose} className="p-2">
             <X className="h-5 w-5" />
@@ -45,14 +61,18 @@ export default function UpcomingEventModal({ event, isOpen, onClose, onSuccess }
             <input
               type="text"
               value={formData.title}
-              onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
+              onChange={(e) =>
+                setFormData((prev) => ({ ...prev, title: e.target.value }))
+              }
               className="w-full px-3 py-2 border rounded-md"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-1">Event Image</label>
+            <label className="block text-sm font-medium mb-1">
+              Event Image
+            </label>
             <input
               type="file"
               ref={fileInputRef}
@@ -82,7 +102,9 @@ export default function UpcomingEventModal({ event, isOpen, onClose, onSuccess }
                 onClick={() => fileInputRef.current?.click()}
               >
                 <Upload className="mx-auto h-12 w-12 text-gray-400" />
-                <p className="mt-2 text-sm text-gray-500">Click to upload an image</p>
+                <p className="mt-2 text-sm text-gray-500">
+                  Click to upload an image
+                </p>
               </div>
             )}
           </div>
@@ -99,7 +121,7 @@ export default function UpcomingEventModal({ event, isOpen, onClose, onSuccess }
               type="submit"
               className="px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700"
             >
-              {event ? 'Update Event' : 'Create Event'}
+              {event ? "Update Event" : "Create Event"}
             </button>
           </div>
         </form>

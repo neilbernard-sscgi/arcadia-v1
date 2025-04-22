@@ -17,7 +17,7 @@ export default function App() {
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-3xl font-bold">Upcoming Events</h1>
           <button
-            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-blue-700"
             onClick={() => setIsUpcomingEventModalOpen(true)}
           >
             <PlusCircle className="h-4 w-4" />
@@ -33,7 +33,7 @@ export default function App() {
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-3xl font-bold">Previous Events</h1>
           <button
-            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-blue-700"
             onClick={() => setIsEventModalOpen(true)}
           >
             <PlusCircle className="h-4 w-4" />
